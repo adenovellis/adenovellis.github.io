@@ -1,13 +1,16 @@
 body {
-  background-color: #ede8f5;
+  background-color: #adbbda;
   font-family: 'Bradley Hand', cursive, sans-serif; 
 }
 
 img {
   border-radius: 20px;
-  border: 2px solid lightgreen; 
+  border: 2px solid #244855; 
+  filter: opacity(90%);
 }
 
 h1 {
   text-decoration: underline dotted blue;
+  color:#8697c4;
+  border: 3px: solid #244855;
 }
