@@ -6,7 +6,7 @@ body {
 img {
   border-radius: 20px;
   border: 2px solid #244855; 
-  filter: dropshadow(8px 8px 10px blue);
+  filter: dropshadow(8px 8px);
 }
 
 h1 {
