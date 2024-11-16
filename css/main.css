@@ -12,7 +12,7 @@ img {
 h1 {
   text-decoration: underline dotted blue;
   filter: dropshadow(8px 8px);
-  font-family: 'Georgia, serif; 
+  font-family: 'Georgia', serif; 
   
 }
 
