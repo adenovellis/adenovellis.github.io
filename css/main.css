@@ -1,9 +1,11 @@
 body{
-background-color: #d0bdf4;
+background-color: #ede8f5;
+font-family: 'Bradley Hand', cursive;
 }
 
 img{
-border-radius: 5px;
+border-radius: 20px;
+border: solid light-green;
   
 }
 
