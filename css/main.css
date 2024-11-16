@@ -1,14 +1,13 @@
-body{
-background-color: #ede8f5;
-font-family: 'Bradley Hand', cursive;
+body {
+  background-color: #ede8f5;
+  font-family: 'Bradley Hand', cursive, sans-serif; 
 }
 
-img{
-border-radius: 20px;
-border: solid light-green;
-  
+img {
+  border-radius: 20px;
+  border: 2px solid lightgreen; 
 }
 
-h1{
-text-decoration: underline dotted blue;
+h1 {
+  text-decoration: underline dotted blue;
 }
