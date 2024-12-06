@@ -9,6 +9,8 @@ body {
 nav{
   margin-top: 5px;
   margin: 8vw;
+  position: fixed;
+  float:left;
 }
 
 h1{
