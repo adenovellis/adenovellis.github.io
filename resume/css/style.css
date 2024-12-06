@@ -4,7 +4,7 @@ body {
 }
 
 .date {
-    color: #000080; 
+    color: #D59F7B; 
 }
 nav{
   margin-top: 5px;
@@ -13,4 +13,13 @@ nav{
 
 h1{
  margin: 20vw;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
+section{
+    border: 3px #000080;
+    margin: 20vw;
 }
