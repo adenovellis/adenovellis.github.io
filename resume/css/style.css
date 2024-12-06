@@ -1,6 +1,16 @@
-body{
-background-color: #F7F7F7
+body {
+    text-align: center;
+    background-color: #F7F7F7;
 }
-.date{
-text-color: #000080
+
+.date {
+    color: #000080;
+}
+nav{
+  margin-top: 5px;
+  margin: 8vw;
+}
+
+h1{
+ margin: 20vw;
 }
