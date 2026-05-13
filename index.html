@@ -1,17 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/main.css">
-  <title>Home  Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashtyn DeNovellis - Portfolio</title>
+    <style>
+        /* Modern, professional CSS styling */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f7f6; 
+        }
+        header { 
+            background: #2c3e50; 
+            color: #fff; 
+            padding: 3rem 0; 
+            text-align: center; 
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.8rem; 
+            letter-spacing: 1px;
+        }
+        header p { 
+            margin: 10px 0 0; 
+            font-size: 1.2rem; 
+            font-weight: 300; 
+            color: #bdc3c7;
+        }
+        .container { 
+            width: 85%; 
+            max-width: 900px; 
+            margin: 2rem auto; 
+            overflow: hidden; 
+        }
+        section { 
+            background: #fff; 
+            padding: 2rem 2.5rem; 
+            margin-bottom: 2rem; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+        }
+        h2 { 
+            border-bottom: 2px solid #3498db; 
+            padding-bottom: 10px; 
+            color: #2c3e50; 
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        .skills-list { 
+            list-style: none; 
+            padding: 0; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+        }
+        .skills-list li { 
+            background: #3498db; 
+            color: #fff; 
+            padding: 8px 16px; 
+            border-radius: 20px; 
+            font-size: 0.95rem; 
+            font-weight: 500;
+        }
+        .contact-info { 
+            list-style: none; 
+            padding: 0; 
+            font-size: 1.1rem;
+        }
+        .contact-info li { 
+            margin-bottom: 10px; 
+        }
+        a { 
+            color: #3498db; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+        .project-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+    </style>
 </head>
 <body>
-  <h1 class="title">My Home Page</h1>
-  <img style="width: 50vw;" src="images/logo.png" alt="UNC Logo">
-  <ul>
-    <li><a href="profile.html">Profile</a></li>
-    <li><a href="inspire.html">My Hero</a></li>
-    <li><a href="amuse.html">My Amusement</a></li>
-  </ul>
+
+<header>
+    <h1>Ashtyn DeNovellis</h1>
+    <p>Software Engineer | Game Developer | Bioinformatics</p>
+</header>
+
+<div class="container">
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a Software Engineering major at the University of Northern Colorado, driven by a passion for creating immersive digital experiences and solving complex technical challenges. I specialize in game development using the Unity engine and C#, alongside 3D asset creation and mesh modeling in Blender. I also hold a strong professional interest in bioinformatics and the biotech software industry, looking for ways to bridge software engineering with biological sciences. When I'm away from my computer, I love to play spikeball, ski, and spend time with my dog, Oreo, and my cat, Oakley.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>University of Northern Colorado</strong><br>
+        Bachelor's Degree in Software Engineering<br>
+        <em>Expected Graduation: May 2026</em></p>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Technical Experience</h2>
+        <p class="project-title">Garden Defense Game</p>
+        <p>Developing an interactive video game project incorporating garden-building mechanics and defensive combat elements. Responsibilities include building raycast-based gun scripts, creating garden plot activation systems, debugging C# mechanics for FPS controllers, and ensuring robust enemy targeting systems.</p>
+        
+        <p class="project-title">3D Asset Creation</p>
+        <p>Designing custom meshes and resolving volume properties for environment assets using Blender, directly integrating them into Unity environments.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Technologies</h2>
+        <ul class="skills-list">
+            <li>C#</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Unity Engine</li>
+            <li>Blender (3D Modeling)</li>
+            <li>Bioinformatics</li>
+            <li>Teamwork</li>
+            <li>Adaptability</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <ul class="contact-info">
+            <li><strong>Phone:</strong> 970-800-1300</li>
+            <li><strong>Email:</strong> <a href="mailto:dent5555@bears.unco.edu">dent5555@bears.unco.edu</a></li>
+        </ul>
+    </section>
+</div>
+
 </body>
 </html>
