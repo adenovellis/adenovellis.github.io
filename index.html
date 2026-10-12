@@ -5,305 +5,330 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashtyn DeNovellis - Portfolio</title>
     <style>
+        :root {
+            --primary: #2A7B9B;
+            --secondary: #1D3D29;
+            --accent: #AF53ED;
+            --bg-light: #f8fafc;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --card-bg: #ffffff;
+        }
+
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             line-height: 1.6; 
-            color: #333; 
+            color: var(--text-main); 
             margin: 0; 
             padding: 0; 
-            background-color: #f4f7f6; 
+            background-color: var(--bg-light); 
         }
+
+        /* --- Header & Hero --- */
         header { 
-            background: #2A7B9B;
-            background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(29, 61, 41, 1) 51%, rgba(175, 83, 237, 1) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
             color: #fff; 
-            padding: 3rem 0; 
-            text-align: center; 
+            padding: 4rem 1.5rem; 
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
+
         header h1 { 
             margin: 0; 
-            font-size: 2.8rem; 
-            letter-spacing: 1px;
+            font-size: 3rem; 
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
+
         header p { 
-            margin: 10px 0 0; 
-            font-size: 1.2rem; 
-            font-weight: 300; 
-            color: #bdc3c7;
+            margin: 0.5rem 0 0; 
+            font-size: 1.25rem; 
+            font-weight: 400; 
+            color: #e2e8f0;
         }
+
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: top center; 
-            margin-top: 1.5rem;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
         }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- Layout Containers --- */
         .container { 
-            width: 85%; 
-            max-width: 900px; 
-            margin: 2rem auto; 
-            overflow: hidden; 
+            width: 90%; 
+            max-width: 1100px; 
+            margin: -3rem auto 3rem; 
+            position: relative;
+            z-index: 10;
         }
-        section { 
-            background: #fff; 
-            padding: 2rem 2.5rem; 
+
+        .panel { 
+            background: var(--card-bg); 
+            padding: 2.5rem; 
             margin-bottom: 2rem; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
         }
+
         h2 { 
-            border-bottom: 2px solid #3498db; 
-            padding-bottom: 10px; 
-            color: #2c3e50; 
-            font-size: 1.5rem;
+            display: inline-block;
+            color: var(--secondary); 
+            font-size: 1.75rem;
             margin-top: 0;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.25rem;
         }
-        h3 {
-            color: #2c3e50;
-            margin-bottom: 0.2rem;
+
+        /* --- Project Grid System --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
-        .project-title {
-            font-weight: bold;
-            font-size: 1.15rem;
-            color: #2c3e50;
-            margin-bottom: 0.2rem;
-            margin-top: 1.5rem;
+
+        .project-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
         }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem 0;
+        }
+
         .project-meta {
-            font-style: italic;
-            color: #555;
-            margin-top: 0;
-            font-size: 0.95rem;
-        }
-        ul.project-details {
-            margin-top: 0.5rem;
-            padding-left: 1.5rem;
-        }
-        .skills-category {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .skills-category strong {
-            color: #2c3e50;
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            flex-grow: 1;
         }
+
+        .project-links a {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-right: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .project-links a:hover {
+            border-bottom-color: var(--primary);
+        }
+
+        /* --- Utilities --- */
         .contact-info { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             list-style: none; 
             padding: 0; 
-            font-size: 1.1rem;
+            margin: 0;
         }
-        .contact-info li { 
-            margin-bottom: 10px; 
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
         }
-        a { 
-            color: #3498db; 
-            text-decoration: none; 
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
-        a:hover { 
-            text-decoration: underline; 
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
+
+        .skill-item strong {
+            display: block;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
         .resume-btn {
             display: inline-block;
-            background: #3498db;
+            background: var(--primary);
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 28px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
         }
+
         .resume-btn:hover {
-            background: #2980b9;
-            text-decoration: none;
-            color: #fff;
+            background: var(--secondary);
+            transform: translateY(-2px);
         }
 
-        /* Split Container Setup */
-.split-container {
-  display: flex;
-  width: 100%;
-  min-height: 100vh; /* Ensures the section takes up the full viewport height */
-  overflow: hidden;
-}
-
-/* Base styling for both sides */
-.split {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-  text-align: center;
-  transition: flex 0.4s ease-in-out; /* Smooth expansion animation */
-  text-decoration: none;
-}
-
-/* Specific styling for the Bioinformatics side */
-.left-split {
-  background-color: #2c3e50; /* Dark slate */
-  color: #ffffff;
-}
-
-/* Specific styling for the Software Engineering side */
-.right-split {
-  background-color: #ecf0f1; /* Light gray */
-  color: #2c3e50;
-}
-
-/* Hover Effect: Expands the hovered side and shrinks the other */
-.split-container:hover .split {
-  flex: 1; 
-}
-.split-container .split:hover {
-  flex: 1.5; /* Increases width of the hovered element */
-}
-
-/* Button Styling */
-.portfolio-btn {
-  margin-top: 20px;
-  padding: 12px 24px;
-  border: 2px solid currentColor;
-  border-radius: 4px;
-  color: inherit;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.left-split .portfolio-btn:hover {
-  background-color: #ffffff;
-  color: #2c3e50;
-}
-
-.right-split .portfolio-btn:hover {
-  background-color: #2c3e50;
-  color: #ffffff;
-}
-
-/* Mobile Responsiveness: Stacks the split screen on smaller devices */
-@media (max-width: 768px) {
-  .split-container {
-    flex-direction: column;
-  }
-  .split {
-    min-height: 50vh;
-  }
-  .split-container .split:hover {
-    flex: 1; /* Disables the expansion effect on mobile for better usability */
-  }
-}
+        @media (max-width: 768px) {
+            .container { width: 95%; margin-top: -1.5rem; }
+            .panel { padding: 1.5rem; }
+            .contact-info { flex-direction: column; gap: 0.5rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Ashtyn DeNovellis</h1>
-    <p>Software Engineer</p>
-    <img src="profilepicture.png" alt="Profile Picture" class="profile-img">
+    <p>Software Engineer & Bioinformaticist</p>
+    <img src="profilepicture.png" alt="Ashtyn DeNovellis" class="profile-img">
 </header>
 
 <div class="container">
-    <section id="contact">
-        <h2>Contact Information</h2>
-        <ul class="contact-info">
+    <!-- About & Contact Combined for Cleaner Flow -->
+    <section class="panel" id="about">
+        <h2>About & Contact</h2>
+        <p>I am a Software Engineering graduate (<em>summa cum laude</em>) from the University of Northern Colorado, driven by a passion for bridging full-stack software architecture with the biological sciences. I specialize in developing robust web applications, optimizing data structures, and architecting computational biology pipelines for genomic analysis and wildlife conservation.</p>
+        
+        <ul class="contact-info" style="margin-top: 1.5rem;">
             <li><strong>Phone:</strong> (970) 800-1305</li>
             <li><strong>Email:</strong> <a href="mailto:ashtyndenovellis@gmail.com">ashtyndenovellis@gmail.com</a></li>
             <li><strong>GitHub:</strong> <a href="https://github.com/adenovellis" target="_blank">github.com/adenovellis</a></li>
-            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ashtyn-denovellis-201b432b8/" target="_blank">linkedin.com/in/ashtyn-denovellis-201b432b8/</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ashtyn-denovellis-201b432b8/" target="_blank">Connect on LinkedIn</a></li>
         </ul>
     </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a recent Software Engineering graduate from the University of Northern Colorado, having graduated <em>summa cum laude</em>. I am driven by a passion for building robust full-stack applications and solving complex technical challenges. I hold a strong professional interest in bioinformatics and the biotech software industry, continually looking for innovative ways to bridge software engineering with the biological sciences.</p>
+
+    <!-- Bioinformatics Portfolio -->
+    <section class="panel" id="bioinformatics">
+        <h2>Bioinformatics Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Microbiome FASTQ Pipeline</h3>
+                <div class="project-meta">Python, Biopython, SRA Toolkit</div>
+                <p>Developed a memory-efficient pipeline utilizing FastqGeneralIterator to process 2.89M whole-genome sequencing reads. Calculated GC fractions and mapped secondary contamination peaks via Matplotlib histograms.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Mexican Gray Wolf Genetic Diversity</h3>
+                <div class="project-meta">Python, Pandas, NumPy</div>
+                <p>Processed PLINK pedigree data (MW.clean.ped) to calculate individual genetic heterozygosity rates. Generated pairwise breeding recommendation matrix heatmaps to support sanctuary conservation programs.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Waterfowl Local BLAST Database</h3>
+                <div class="project-meta">BLAST+, CLI, NCBI Data</div>
+                <p>Compiled a 15M sequence local BLAST database from downloaded SRA WGS datasets. Executed tblastn searches against bacteriophage major capsid protein bait sequences to isolate 500 biological alignment hits.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <h3>University of Northern Colorado</h3>
-        <p style="margin-top: 0;"><strong>Greeley, Colorado</strong><br>
-        Bachelor of Science in Software Engineering, <em>Summa Cum Laude</em><br>
-        Graduated: May 2026 | GPA: 3.97</p>
+    <!-- Software Engineering Portfolio -->
+    <section class="panel" id="software">
+        <h2>Software Engineering Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Eco-Dex</h3>
+                <div class="project-meta">React, Firebase, Gemini AI, Vercel</div>
+                <p>Full-stack application processing biological data to identify 10,000+ species with real-time conservation status. Integrated Gemini AI for sub-15-second image-based biological classifications.</p>
+                <div class="project-links">
+                    <a href="https://eco-dex-seven.vercel.app/" target="_blank">Live App</a>
+                    <a href="https://github.com/tmdirito/SICI" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>AI Powered Language Learning</h3>
+                <div class="project-meta">React, MongoDB, Ollama API</div>
+                <p>React-based web application featuring a real-time asynchronous chat interface. Blended local Ollama AI RESTful APIs for instant feedback and utilized MongoDB for persisting conversation history.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Bear Events Platform</h3>
+                <div class="project-meta">React, Node.js, Agile/Scrum</div>
+                <p>Architected a full-stack campus platform with 15+ reusable React components for real-time tracking of event types. Collaborated in a 30-person Agile environment via Jira and Git.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Secure Web Notes App</h3>
+                <div class="project-meta">JavaScript, IndexedDB, HTML/CSS</div>
+                <p>Engineered a persistent web-based note-taking client featuring client-side IndexedDB storage, expandable sticky notes, inline checklist injections, and a secure page PIN locking mechanism.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Dynamic Unity Inventory</h3>
+                <div class="project-meta">C#, Unity 3D</div>
+                <p>Developed modular player character scripts in C# to handle state-driven inventory switching and dynamic runtime instantiation of grenade prefabs in a 3D environment.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>AI Isolation Game Algorithm</h3>
+                <div class="project-meta">C++, Monte-Carlo Algorithms</div>
+                <p>Created a custom Monte-Carlo Tree Search algorithm for an AI bot, achieving a 90% win rate. Optimized heavy C++ implementations for strict memory efficiency and low decision latency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Resume -->
+    <section class="panel" id="skills-education">
+        <h2>Education & Technical Skills</h2>
         
-        <p><strong>Relevant Coursework:</strong> AI, Data Structures & Algorithms, Database Management, UI/UX Design, Project Management, PHP Development, Web Design, Object Oriented Programming, Operating Systems.</p>
-        <p><strong>Honors/Awards:</strong> UNC Presidential Trustee Scholarship, Dean's List every semester, Academic Excellence Awards.</p>
-    </section>
-
-
-    <!-- Split Portfolio Section -->
-<section id="portfolio-split" class="split-container">
-  
-  <!-- Left Side: Bioinformatics -->
-  <div class="split left-split">
-    <h2>Bioinformatics</h2>
-    <p>Computational biology, genomic data analysis, FASTQ processing pipelines, and wildlife conservation algorithms.</p>
-    <a href="bioinformatics.html" class="portfolio-btn">Explore Bioinformatics</a>
-  </div>
-
-  <!-- Right Side: Software & Other Projects -->
-  <div class="split right-split">
-    <h2>Software Engineering</h2>
-    <p>Unity C# development, web-based applications, IndexedDB persistence, and UI/UX tool design.</p>
-    <a href="projects.html" class="portfolio-btn">Explore Software</a>
-  </div>
-
-</section>
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        
-        <p class="project-title">Eco-Dex</p>
-        <p><a href ="https://eco-dex-seven.vercel.app/"> Live Application </a> </p>
-        <p><a href ="https://github.com/tmdirito/SICI"> Github Repo </a> </p>
-        <p class="project-meta">React, Firebase, Gemini AI, Vercel</p>
-        <ul class="project-details">
-            <li>Building a full-stack application to process biological data, identifying 10,000+ species with real-time conservation status.</li>
-            <li>Incorporated Gemini AI API for image-based identification, returning biological classifications in under 15 seconds.</li>
-            <li>Created a responsive React UI from 15+ Figma screens and implemented Firebase for secure user data management.</li>
-        </ul>
-        
-        <p class="project-title">Bear Events</p>
-        <p class="project-meta">React, Agile (Scrum), Jira</p>
-        <ul class="project-details">
-            <li>Architected a full-stack platform featuring 15+ reusable React components and real-time tracking for 12+ event types.</li>
-            <li>Collaborated in a 30-person Agile environment using Jira and Git, conducting extensive code reviews to merge features.</li>
-        </ul>
-
-        <p class="project-title">AI Powered Language Learning</p>
-        <p class="project-meta">React, MongoDB, Ollama API</p>
-        <ul class="project-details">
-            <li>Engineered a React-based web application with a real-time asynchronous chat interface and sub-10s response times.</li>
-            <li>Blended Ollama AI RESTful APIs for instant feedback and built a MongoDB database for conversation history.</li>
-        </ul>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-category">
-            <strong>Languages:</strong> Python, C++, SQL, Java, C#, JavaScript, TypeScript
+        <div style="margin-bottom: 2rem;">
+            <h3>University of Northern Colorado</h3>
+            <p><strong>B.S. in Software Engineering, Summa Cum Laude (GPA: 3.97)</strong><br>
+            <em>Honors:</em> UNC Presidential Trustee Scholarship, Dean's List, Academic Excellence Awards</p>
         </div>
-        <div class="skills-category">
-            <strong>Frameworks/APIs:</strong> .NET, React, Node.js, Firebase, Gemini API, Ollama API
+
+        <div class="skills-grid">
+            <div class="skill-item">
+                <strong>Languages</strong>
+                Python, C++, SQL, Java, C#, JavaScript, TypeScript
+            </div>
+            <div class="skill-item">
+                <strong>Frameworks & APIs</strong>
+                React, Node.js, .NET, Firebase, Gemini API, Ollama API
+            </div>
+            <div class="skill-item">
+                <strong>Tools & DBs</strong>
+                Git/GitHub, IndexedDB, MongoDB, SQLite, Biopython, BLAST+
+            </div>
+            <div class="skill-item">
+                <strong>Methodologies</strong>
+                Agile (Scrum, Kanban), MCTS, Simulated Annealing
+            </div>
         </div>
-        <div class="skills-category">
-            <strong>Tools:</strong> GitHub, Visual Studio, VS Code, Figma, Blender, Jira, Microsoft Teams
+
+        <div style="margin-top: 2.5rem; text-align: center;">
+            <a href="FinalResume.pdf" class="resume-btn" download>Download Full Resume (PDF)</a>
         </div>
-        <div class="skills-category">
-            <strong>Algorithms:</strong> Simulated Annealing, Breadth/Depth First Search, Monte Carlo, Ant Colony
-        </div>
-        <div class="skills-category">
-            <strong>Methodologies:</strong> Agile Development (Scrum, Kanban)
-        </div>
-    </section>
-    
-    <section id="resume">
-        <h2>Download Resume</h2>
-        <p>
-            <a href="FinalResume.pdf" class="resume-btn" download>Download PDF</a>
-        </p>
     </section>
 </div>
 
